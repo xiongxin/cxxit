@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/xiongxin/Data/Code/cxxit/build",
+  "command": "/usr/lib64/ccache/g++ -DGFLAGS_IS_A_DLL=0 -DGLOG_CUSTOM_PREFIX_SUPPORT -I/home/xiongxin/Data/Code/cxxit/includes -isystem /home/xiongxin/Data/Code/vcpkg/installed/x64-linux/include -g -std=gnu++20 -o CMakeFiles/cxxit.dir/main.cpp.o -c /home/xiongxin/Data/Code/cxxit/main.cpp",
+  "file": "/home/xiongxin/Data/Code/cxxit/main.cpp"
+},
+{
+  "directory": "/home/xiongxin/Data/Code/cxxit/build",
+  "command": "/usr/lib64/ccache/g++ -DGFLAGS_IS_A_DLL=0 -DGLOG_CUSTOM_PREFIX_SUPPORT -I/home/xiongxin/Data/Code/cxxit/includes -isystem /home/xiongxin/Data/Code/vcpkg/installed/x64-linux/include -g -std=gnu++20 -o CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o -c /home/xiongxin/Data/Code/cxxit/sources/workspace.cpp",
+  "file": "/home/xiongxin/Data/Code/cxxit/sources/workspace.cpp"
+}
+]

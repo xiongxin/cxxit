@@ -1,0 +1,26 @@
+# ninja log v5
+1288	1345	1660650675596582345	libcxxit_library.a	4eff8aceb2aef24
+2	1288	1660650675535581876	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1ce1bfdbf5afb836
+1	1889	1660650939483612228	CMakeFiles/cxxit.dir/main.cpp.o	20fdbe8dc8edba8f
+1958	2263	1660650676512589391	cxxit	35fbfda264b1228
+2	1535	1660654446112080413	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1536	1588	1660654446169080847	libcxxit_library.a	4eff8aceb2aef24
+1588	1953	1660654446527083577	cxxit	e43a711d99d15873
+2	22	1660654495645458123	CMakeFiles/cxxit.dir/main.cpp.o	20fdbe8dc8edba8f
+2	1597	1660654497214470087	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1597	1654	1660654497275470552	libcxxit_library.a	4eff8aceb2aef24
+1654	1983	1660654497601473038	cxxit	e43a711d99d15873
+2	2022	1660654609120323394	CMakeFiles/cxxit.dir/main.cpp.o	20fdbe8dc8edba8f
+2	1658	1660654634688518354	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1658	1713	1660654634747518803	libcxxit_library.a	4eff8aceb2aef24
+1713	2034	1660654635064521221	cxxit	e43a711d99d15873
+1	1772	1660654659594708262	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1773	1828	1660654659654708719	libcxxit_library.a	4eff8aceb2aef24
+1828	2137	1660654659959711045	cxxit	e43a711d99d15873
+2	2475	1660659815802814510	CMakeFiles/cxxit.dir/main.cpp.o	20fdbe8dc8edba8f
+2	1634	1660659830465924278	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1634	1692	1660659830526924735	libcxxit_library.a	4eff8aceb2aef24
+1692	2244	1660659831074928837	cxxit	e43a711d99d15873
+2	1625	1660659856627120117	CMakeFiles/cxxit_library.dir/sources/workspace.cpp.o	1bdfcba47293ce74
+1625	1681	1660659856687120566	libcxxit_library.a	4eff8aceb2aef24
+1681	1993	1660659856995122871	cxxit	e43a711d99d15873
