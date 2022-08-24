@@ -1,37 +1,35 @@
-//
-// Created by xiongxin on 8/16/22.
-//
-#include "../inculdes/workspace.h"
+#include "../includes/workspace.hpp"
 
-#include <algorithm>
-#include <fmt/format.h>
 #include <folly/FileUtil.h>
 
-Workspace::Workspace(std::string_view pathname) { this->pathname = pathname; }
+#include <iterator>
+#include <range/v3/all.hpp>
+#include <utility>
 
-std::vector<fs::path> Workspace::list_files() {
-  fs::directory_iterator directory_iterator = fs::directory_iterator(pathname);
 
-  std::vector<fs::path> res{};
-
-  for (auto &p : fs::directory_iterator(pathname)) {
-    auto is_ignore = false;
-    for (auto &ig : IGNORE) {
-      if (p.path() == (pathname / ig)) {
-        is_ignore = true;
-      }
-    }
-    if (!is_ignore) {
-      res.push_back(p.path());
-    }
-  }
-
-  return res;
+Workspace::Workspace(fs::path pathname) : m_pathname{std::move(pathname)},
+                                          m_ignores{
+                                                  {".idea"},
+                                                  {".git"},
+                                                  {".rit"},
+                                                  {"cmake-build-debug"}} {
 }
 
-std::string Workspace::read_file(const char *path) {
-  std::string res{};
-  folly::readFile(path, res);
+std::set<fs::path> Workspace::list_files() {
+    std::set<fs::path> res{};
+    std::set<fs::path> paths{};
+    ranges::for_each(fs::directory_iterator(m_pathname),
+                     [&](auto&& entry) { return paths.insert(fs::relative(entry.path(), m_pathname)); });
+    ranges::set_difference(paths, m_ignores, std::inserter(res, res.begin()));
 
-  return res;
+    return res;
+}
+
+std::string Workspace::read_file(const fs::path& path) {
+    std::string res{};
+    if (folly::readFile(path.c_str(), res)) {
+        return res;
+    }
+
+    return "";
 }

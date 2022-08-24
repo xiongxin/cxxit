@@ -7,10 +7,10 @@ add_executable(cxxit main.cpp)
 include_directories(includes)
 
 file(GLOB SOURCES_CODE sources/*.cpp)
-add_library(cxxit_library STATIC ${SOURCES_CODE})
+add_library(cxxit_lib STATIC ${SOURCES_CODE})
 
 find_package(fmt CONFIG REQUIRED)
 find_package(folly CONFIG REQUIRED)
 
-target_link_libraries(cxxit_library fmt::fmt Folly::folly)
-target_link_libraries(cxxit fmt::fmt Folly::folly cxxit_library)
+target_link_libraries(cxxit_lib fmt::fmt Folly::folly)
+target_link_libraries(cxxit fmt::fmt Folly::folly cxxit_lib)

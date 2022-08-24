@@ -1,3 +1,4 @@
 .rit
 .idea
 build
+cmake-build-debug
