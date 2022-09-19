@@ -13,7 +13,6 @@
 #include "./includes/blob.hpp"
 #include "./includes/commit.hpp"
 #include "./includes/database.hpp"
-#include "./includes/tree.hpp"
 #include "./includes/workspace.hpp"
 
 namespace fs = std::filesystem;
@@ -29,7 +28,7 @@ int main(int argc, char *argv[]) {
             auto root_path = fs::absolute(path);
             auto git_path = root_path / ".rit";
 
-            for (std::string_view dir: {"objects", "refs"}) {
+            for (auto const dir: {"objects", "refs"}) {
                 try {
                     fs::create_directories(git_path / dir);
                 } catch (fs::filesystem_error &filesystem_error) {
@@ -50,7 +49,7 @@ int main(int argc, char *argv[]) {
             Database database{db_path};
             std::set<Entry> entries{};
             for (auto &p: workspace.list_files()) {
-                fmt::print("{}\n", p.string());
+                //                fmt::print("{}\n", p.string());
                 if (fs::is_regular_file(p)) {
                     auto data = Workspace::read_file(p);
                     auto blob = Blob{data};

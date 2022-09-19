@@ -13,22 +13,24 @@
 #include <string>
 
 void Database::store(Blob& blob) {
-    auto string = blob.to_s();
+    std::string content = blob.to_s();
     folly::IOBuf buf{};
     folly::io::Appender app(&buf, 20);
     app.push(folly::StringPiece{blob.type()});
     app.write(' ');
-    auto size = std::to_string(string.size());
+
+    std::string size = std::to_string(content.size());
     app.push(folly::StringPiece{size});
     app.write((uint8_t) 0);
-    app.push(folly::StringPiece{string});
-    auto out = std::array<uint8_t, 20>{};
+    app.push(folly::StringPiece{content});
+
+    std::array<char, 20> out{};
     folly::ssl::OpenSSLHash::sha1(folly::range(out), buf);
     blob.set_oid(folly::hexlify(out));
     write_object(blob.get_oid(), &buf);
 }
 
-void Database::write_object(const std::string_view& oid, folly::IOBuf* buf) {
+void Database::write_object(std::string_view oid, folly::IOBuf* buf) {
     auto object_path = m_pathname / oid.substr(0, 2) / oid.substr(2);
     auto dirname = object_path.parent_path();
     if (!fs::exists(dirname)) create_directories(dirname);

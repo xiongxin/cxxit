@@ -14,8 +14,7 @@ class Tree : public Entry {
 public:
     constexpr static std::string_view s_mode = "100644";
 
-    explicit Tree(std::set<Entry> entries) : m_entries{std::move(entries)},
-                                             Entry("", "") {}
+    explicit Tree(std::set<Entry> entries) : m_entries{std::move(entries)} {}
     [[nodiscard]] std::string to_s() const override;
     constexpr std::string_view type() override { return "tree"; }
 };

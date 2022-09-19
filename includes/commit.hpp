@@ -6,9 +6,8 @@
 
 class Commit : public Blob {
 public:
-    Commit(const std::string_view& tree, const std::string_view& message) : m_tree{tree},
-                                                                            m_message{message},
-                                                                            Blob("") {}
+    Commit(std::string_view tree, const std::string_view& message) : m_tree{tree},
+                                                                     m_message{message} {}
     [[nodiscard]] std::string to_s() const override;
     constexpr std::string_view type() override { return "commit"; }
 

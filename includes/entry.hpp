@@ -7,8 +7,8 @@
 
 class Entry : public Blob {
 public:
-    explicit Entry(const std::string_view& name, const std::string_view& oid) : m_name{name},
-                                                                                Blob("") {
+    Entry() = default;
+    explicit Entry(std::string_view name, std::string_view oid) : m_name{name} {
         set_oid(std::string{oid});
     }
     [[nodiscard]] std::string_view get_name() const { return m_name; }

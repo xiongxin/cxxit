@@ -5,6 +5,7 @@
 
 class Blob {
 public:
+    Blob() = default;
     explicit Blob(std::string_view);
 
     virtual constexpr std::string_view type() { return "blob"; }

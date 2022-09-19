@@ -31,5 +31,5 @@ std::string Workspace::read_file(const fs::path& path) {
         return res;
     }
 
-    return "";
+    return res;
 }
